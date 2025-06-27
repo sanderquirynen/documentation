@@ -103,7 +103,9 @@ module.exports = ({ strapi }) => {
 <TabItem value="ts" label="TypeScript">
 
 ```ts title="/src/plugins/color-picker/server/register.ts"
-export default ({ strapi }: { strapi: any }) => {
+import type { Core } from '@strapi/strapi';
+
+export default ({ strapi }: { strapi: Core.Strapi }) => {
   strapi.customFields.register({
     name: "color",
     plugin: "color-picker",
